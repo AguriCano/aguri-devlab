@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 import { Mail, FileText, MessageCircle, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export const CTASection = () => {
   return (
@@ -64,13 +65,12 @@ export const CTASection = () => {
             </div>
           </div>
 
-          {/* Contacto directo */}
+          {/* Contacto directo - Sin motion.a para evitar errores */}
           <div className="flex flex-wrap gap-6 justify-center">
-            <motion.a
+            <Link
               href="#"
               target="_blank"
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-3 px-6 py-3 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-xl hover:border-[var(--color-primary)]/50 transition-all duration-300 group"
+              className="flex items-center gap-3 px-6 py-3 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-xl hover:border-[var(--color-primary)]/50 hover:scale-105 transition-all duration-300 group"
             >
               <MessageCircle
                 size={20}
@@ -81,13 +81,12 @@ export const CTASection = () => {
                 size={16}
                 className="opacity-0 group-hover:opacity-100 transition-opacity"
               />
-            </motion.a>
+            </Link>
 
-            <motion.a
+            <Link
               href="#"
               target="_blank"
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-3 px-6 py-3 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-xl hover:border-[var(--color-primary)]/50 transition-all duration-300 group"
+              className="flex items-center gap-3 px-6 py-3 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-xl hover:border-[var(--color-primary)]/50 hover:scale-105 transition-all duration-300 group"
             >
               <Mail size={20} className="text-[var(--color-primary)]" />
               <span className="font-medium">aguri@devlab.com</span>
@@ -95,13 +94,12 @@ export const CTASection = () => {
                 size={16}
                 className="opacity-0 group-hover:opacity-100 transition-opacity"
               />
-            </motion.a>
+            </Link>
 
-            <motion.a
+            <Link
               href="#"
               target="_blank"
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-3 px-6 py-3 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-xl hover:border-[var(--color-primary)]/50 transition-all duration-300 group"
+              className="flex items-center gap-3 px-6 py-3 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-xl hover:border-[var(--color-primary)]/50 hover:scale-105 transition-all duration-300 group"
             >
               <svg
                 className="w-5 h-5 text-[var(--color-primary)]"
@@ -115,7 +113,7 @@ export const CTASection = () => {
                 size={16}
                 className="opacity-0 group-hover:opacity-100 transition-opacity"
               />
-            </motion.a>
+            </Link>
           </div>
         </motion.div>
       </div>
