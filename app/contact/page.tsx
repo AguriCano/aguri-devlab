@@ -25,22 +25,22 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "aguri@devlab.com",
-    link: "mailto:aguri@devlab.com",
+    value: "aguricano@gmail.com",
+    link: "mailto:aguricano@gmail.com",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: Github,
     title: "GitHub",
-    value: "github.com/aguri-devlab",
-    link: "https://github.com",
+    value: "github.com/AguriCano",
+    link: "https://github.com/AguriCano",
     color: "from-gray-600 to-gray-800",
   },
   {
     icon: Linkedin,
     title: "LinkedIn",
-    value: "linkedin.com/in/aguri",
-    link: "https://linkedin.com",
+    value: "linkedin.com/in/aguri-cano-b3ba68142",
+    link: "https://www.linkedin.com/in/aguri-cano-b3ba68142/",
     color: "from-blue-600 to-blue-800",
   },
 ];
@@ -256,7 +256,7 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium">WhatsApp</p>
                     <p className="text-[var(--color-gray-light)] text-sm">
-                      +1 234 567 890
+                      +51 967 157 459
                     </p>
                   </div>
                 </div>
