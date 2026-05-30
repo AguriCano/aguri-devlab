@@ -8,6 +8,8 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "outline";
   href?: string;
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
   className?: string;
 }
 
@@ -16,6 +18,8 @@ export const Button = ({
   variant = "primary",
   href,
   onClick,
+  type = "button",
+  disabled = false,
   className = "",
 }: ButtonProps) => {
   const baseClasses =
@@ -30,16 +34,29 @@ export const Button = ({
       "border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10",
   };
 
-  const Component = href ? "a" : motion.button;
-  const props = href ? { href } : { onClick, whileTap: { scale: 0.95 } };
+  // If it has an href, use <a>
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={`${baseClasses} ${variants[variant]} ${className}`}
+      >
+        {children}
+      </a>
+    );
+  }
 
+  // Otherwise, use motion.button
   return (
-    <Component
-      {...props}
+    <motion.button
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
       className={`${baseClasses} ${variants[variant]} ${className}`}
-      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: disabled ? 1 : 0.95 }}
+      whileHover={{ scale: disabled ? 1 : 1.05 }}
     >
       {children}
-    </Component>
+    </motion.button>
   );
 };
